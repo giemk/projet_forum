@@ -8,7 +8,7 @@
 		</title>
 		{% block stylesheets %}
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
 		{% endblock %}
 		{% block javascripts %}
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -27,6 +27,36 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="{{ path("accueil")}}">Accueil</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="{{ path("activite")}}">Activités</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Plan
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li>
+									<a class="dropdown-item" href="images/accesresidence.jpg">Plan détaillé</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="images/PlanDesBatiments.jpg">Plan des Logements</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="images/mapfinal.jpg">Résidence vue du ciel</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="images/mapfinal.jpg">Résidence vue du ciel (XXL)</a>
+								</li>
+
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="{{ path("galerie")}}">Galerie</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="{{ path("infocopro")}}">Info Copro</a>
+						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Forum
@@ -41,7 +71,11 @@
 								<li>
 									<a class="dropdown-item" href="{{path("creer_article")}}">Créer un article</a>
 								</li>
+
 							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="{{ path("contact")}}">Contact</a>
 						</li>
 					</ul>
 				</div>

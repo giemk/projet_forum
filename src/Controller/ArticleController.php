@@ -22,9 +22,11 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $post = $form->getData();
+            $article = $form->getData();
 
-            $em->persist($post);
+            $article->setUser($this->getUser());
+
+            $em->persist($article);
 
             $em->flush();
 
