@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Articles;
 
 use App\Form\ArticleType;
 use Doctrine\ORM\EntityManager;
@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class ArticleController extends AbstractController
+class CreateArticleController extends AbstractController
 {
     /**
-     * @Route("/article/creer", name="creer_article")
+     * @Route("/article/creer", name="create_article")
      */
     public function create(Request $request, EntityManagerInterface $em): Response
     {
@@ -32,10 +32,10 @@ class ArticleController extends AbstractController
 
             $this->addFlash('success', 'votre article a bien été enregistré.');
 
-            return $this->redirectToRoute('article');
+            return $this->redirectToRoute('list_article');
         }
 
-        return $this->render('article/createArticle.html.twig', [
+        return $this->render('article/create_article.html.twig', [
             'formArticle' => $form->createView()
         ]);
     }
